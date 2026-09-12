@@ -1,472 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mind Weekly - Track activities that improve mental health with daily journaling and AI-powered insights">
-    <title>Mind Weekly - Mental Health & Wellness Tracker</title>
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Mind Weekly - Mental Health & Wellness Tracker">
-    <meta property="og:description" content="Track daily activities that matter for your wellbeing. Journal your thoughts. Reflect on your progress with AI-powered weekly summaries.">
-    <meta property="og:image" content="https://mindweekly.app/og-image.png">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mind Weekly - Mental Health & Wellness Tracker">
-    <meta name="twitter:description" content="Track daily activities that matter for your wellbeing. Journal your thoughts. Reflect on your progress with AI-powered weekly summaries.">
-    <meta name="twitter:image" content="https://mindweekly.app/og-image.png">
-    
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="screenshots/MWIcon.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="screenshots/MWIcon.png">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Firebase Analytics -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getAnalytics, logEvent } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js';
-        
-        // Your web app's Firebase configuration
-        // TODO: Replace with your actual Firebase config
-        const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT_ID.appspot.com",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID",
-            measurementId: "YOUR_MEASUREMENT_ID"
-        };
-        
-        // Initialize Firebase
-        try {
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-            
-            // Log page view
-            logEvent(analytics, 'page_view');
-            
-            // Track App Store link clicks
-            document.addEventListener('DOMContentLoaded', () => {
-                document.querySelectorAll('a[href*="apps.apple.com"]').forEach(link => {
-                    link.addEventListener('click', () => {
-                        logEvent(analytics, 'app_store_click', {
-                            button_location: link.closest('section')?.className || 'unknown'
-                        });
-                    });
-                });
-            });
-            
-            console.log('Firebase Analytics initialized successfully');
-        } catch (error) {
-            console.warn('Firebase Analytics not configured. Add your config to enable tracking.');
-        }
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070809">
+  <meta name="description" content="Full Circle turns daylight, mindfulness, exercise, headphone use and sleep into simple daily rings—then helps you see what supports your mood.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.mindweekly.app/">
+  <title>Full Circle — See what supports your wellbeing</title>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.mindweekly.app/">
+  <meta property="og:site_name" content="Full Circle">
+  <meta property="og:title" content="Full Circle — See what supports your wellbeing">
+  <meta property="og:description" content="Five daily rings. One clearer view of the habits that shape how you feel.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Full Circle — See what supports your wellbeing">
+  <meta name="twitter:description" content="Five daily rings. One clearer view of the habits that shape how you feel.">
+  <link rel="apple-touch-icon" href="screenshots/MWIcon.png">
+  <link rel="icon" href="screenshots/MWIcon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Full Circle","applicationCategory":"HealthApplication","operatingSystem":"iOS","description":"A daily wellbeing tracker for daylight, mindfulness, exercise, headphone use and sleep, with mood check-ins and weekly reflections.","url":"https://www.mindweekly.app/","downloadUrl":"https://apps.apple.com/app/id6753870098","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <img src="screenshots/MWIcon.png" alt="Mind Weekly Logo" class="logo-icon">
-                    <span class="logo-text">Mind Weekly</span>
-                </div>
-                <a href="https://apps.apple.com/se/app/mind-weekly/id6753870098" class="download-btn-small">Download</a>
-            </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Full Circle home"><img src="screenshots/MWIcon.png" width="40" height="40" alt=""><span>Full Circle</span></a>
+      <nav aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#features">Features</a><a href="#press">Press</a></nav>
+      <a class="button button-small" href="https://apps.apple.com/app/id6753870098">Get the app</a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-orbit" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">A clearer picture of your everyday wellbeing</p>
+          <h1>Build better days.<br><span>See what works.</span></h1>
+          <p class="hero-lede">Full Circle turns the habits that can shape how you feel into five simple daily rings. Track less. Notice more.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://apps.apple.com/app/id6753870098"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09ZM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>Download on the App Store</a>
+            <a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="trust-row"><span>Designed for iPhone</span><span>Works with Apple Health</span><span>Apple Watch supported</span></div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Take care of your mental health, one week at a time</h1>
-                    <p class="hero-subtitle">Track daily activities that matter for your wellbeing. Journal your thoughts. Reflect on your progress with AI-powered weekly summaries.</p>
-                    <div class="cta-buttons">
-                        <a href="https://apps.apple.com/se/app/mind-weekly/id6753870098" class="btn-primary">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-                            </svg>
-                            Download on AppStore
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="phone-mockup">
-                        <div class="screen-glow"></div>
-                        <div class="activity-rings">
-                            <svg viewBox="0 0 200 200" class="rings-svg">
-                                <circle cx="100" cy="100" r="85" class="ring ring-1" />
-                                <circle cx="100" cy="100" r="72" class="ring ring-2" />
-                                <circle cx="100" cy="100" r="59" class="ring ring-3" />
-                                <circle cx="100" cy="100" r="46" class="ring ring-4" />
-                                <circle cx="100" cy="100" r="33" class="ring ring-5" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+        <div class="hero-product reveal" aria-label="Full Circle app preview">
+          <div class="rings-card">
+            <div class="rings-heading"><div><span class="mini-label">TODAY</span><strong>Your daily rhythm</strong></div><span class="score">74</span></div>
+            <div class="rings-layout">
+              <svg class="rings" viewBox="0 0 260 260" role="img" aria-label="Five progress rings for daylight, mindfulness, exercise, awareness and sleep"><g transform="rotate(-90 130 130)" fill="none" stroke-linecap="round"><circle class="track" cx="130" cy="130" r="106"/><circle class="ring daylight" cx="130" cy="130" r="106" pathLength="100"/><circle class="track" cx="130" cy="130" r="86"/><circle class="ring mindfulness" cx="130" cy="130" r="86" pathLength="100"/><circle class="track" cx="130" cy="130" r="66"/><circle class="ring exercise" cx="130" cy="130" r="66" pathLength="100"/><circle class="track" cx="130" cy="130" r="46"/><circle class="ring awareness" cx="130" cy="130" r="46" pathLength="100"/><circle class="track" cx="130" cy="130" r="26"/><circle class="ring sleep" cx="130" cy="130" r="26" pathLength="100"/></g></svg>
+              <ul class="ring-legend"><li><i class="dot daylight-bg"></i><span>Daylight</span><b>48m</b></li><li><i class="dot mindfulness-bg"></i><span>Mindfulness</span><b>12m</b></li><li><i class="dot exercise-bg"></i><span>Exercise</span><b>41m</b></li><li><i class="dot awareness-bg"></i><span>Headphones</span><b>2h 08m</b></li><li><i class="dot sleep-bg"></i><span>Sleep</span><b>7h 24m</b></li></ul>
             </div>
+          </div>
+          <div class="mood-chip"><span>Evening check-in</span><strong>How did today feel?</strong><div aria-hidden="true">○ ○ ● ○ ○</div></div>
         </div>
+      </div>
     </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Everything you need to improve your mental wellbeing</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">☀️</div>
-                    <h3>Outdoor Time</h3>
-                    <p>Track time spent outdoors and exposed to natural daylight to boost your mood and energy.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧘</div>
-                    <h3>Meditation & Reflection</h3>
-                    <p>Monitor your meditation practice and moments of reflection for better mental clarity.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💪</div>
-                    <h3>Physical Activity</h3>
-                    <p>Keep track of exercise and physical activity to strengthen both body and mind.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎧</div>
-                    <h3>Mindful Awareness</h3>
-                    <p>Log time spent in awareness, without headphones, fully present in the moment.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">😴</div>
-                    <h3>Sleep Tracking</h3>
-                    <p>Monitor your sleep patterns during the night or naps for optimal rest and recovery.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3>Daily Journaling</h3>
-                    <p>Express your thoughts and feelings with built-in journaling tools for better self-awareness.</p>
-                </div>
-            </div>
+    <section class="section intro" id="how-it-works">
+      <div class="shell">
+        <div class="section-heading reveal"><p class="eyebrow">Automatic where it matters</p><h2>Your health data, made understandable.</h2><p>Full Circle brings five daily signals together in one glance, using Apple Health and the devices you already carry.</p></div>
+        <div class="signal-grid">
+          <article class="signal-card reveal"><span class="signal-number">01</span><i class="signal-line daylight-bg"></i><h3>Daylight</h3><p>See time spent in natural light and work toward a daily target.</p></article>
+          <article class="signal-card reveal"><span class="signal-number">02</span><i class="signal-line mindfulness-bg"></i><h3>Mindfulness</h3><p>Bring mindful minutes from Apple Health into your daily picture.</p></article>
+          <article class="signal-card reveal"><span class="signal-number">03</span><i class="signal-line exercise-bg"></i><h3>Exercise</h3><p>Connect movement with the way you report feeling over time.</p></article>
+          <article class="signal-card reveal"><span class="signal-number">04</span><i class="signal-line awareness-bg"></i><h3>Headphone use</h3><p>Notice your listening habits and make room for quieter moments.</p></article>
+          <article class="signal-card reveal"><span class="signal-number">05</span><i class="signal-line sleep-bg"></i><h3>Sleep</h3><p>Keep nighttime sleep and naps alongside the rest of your day.</p></article>
         </div>
+        <p class="data-note reveal">You choose what to share. Full Circle reads relevant activity data only after you grant permission in Apple Health.</p>
+      </div>
     </section>
-
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2 class="section-title">Seamless integration with your Apple ecosystem</h2>
-            <p class="section-subtitle">Mind Weekly works with the tools you already use every day</p>
-            <div class="how-it-works-content">
-                <div class="how-it-works-text">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Connect to Apple Health</h3>
-                            <p>Mind Weekly gathers all relevant data directly from the Health app on your iPhone. No manual entry needed—your activities are already being tracked.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Wear Your Apple Watch</h3>
-                            <p>For the best experience, wear your Apple Watch throughout the day. It automatically tracks outdoor time, exercise, sleep, and mindfulness sessions.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Use Your AirPods</h3>
-                            <p>When you're wearing AirPods, the app tracks your listening time. This helps identify moments of awareness when you're not wearing them—time spent fully present.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="how-it-works-visual">
-                    <div class="device-stack">
-                        <div class="device-icon iphone">📱</div>
-                        <div class="device-icon watch">⌚</div>
-                        <div class="device-icon airpods">🎧</div>
-                        <div class="device-icon health">❤️</div>
-                    </div>
-                    <p class="device-note">All your devices work together seamlessly</p>
-                </div>
-            </div>
+    <section class="section story" id="features">
+      <div class="shell story-grid">
+        <div class="phone-shot reveal"><img src="screenshots/activity-tracker.png" alt="Full Circle activity tracker showing five wellbeing categories" loading="lazy" width="1284" height="2778"></div>
+        <div class="story-copy reveal">
+          <p class="eyebrow">From data to self-awareness</p><h2>Don’t just count habits. Connect the dots.</h2>
+          <p class="story-lede">A short evening check-in gives your activity data context. Over time, Full Circle helps reveal which habits tend to show up on your better days.</p>
+          <div class="feature-list"><article><span>01</span><div><h3>Set your own targets</h3><p>Choose realistic daily goals for each ring and adjust them as your routine changes.</p></div></article><article><span>02</span><div><h3>Check in with your mood</h3><p>Give the day a simple score, add influences and keep a record without writing an essay.</p></div></article><article><span>03</span><div><h3>See patterns over time</h3><p>Explore trends and correlations between your tracked activities and reported mood.</p></div></article></div>
         </div>
+      </div>
     </section>
-
-    <!-- Activity Rings Section -->
-    <section class="rings-section">
-        <div class="container">
-            <div class="rings-content">
-                <div class="rings-visual">
-                    <div class="large-rings">
-                        <svg viewBox="0 0 300 300" class="rings-display">
-                            <circle cx="150" cy="150" r="130" class="display-ring ring-1" />
-                            <circle cx="150" cy="150" r="110" class="display-ring ring-2" />
-                            <circle cx="150" cy="150" r="90" class="display-ring ring-3" />
-                            <circle cx="150" cy="150" r="70" class="display-ring ring-4" />
-                            <circle cx="150" cy="150" r="50" class="display-ring ring-5" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="rings-text">
-                    <h2>Track your progress with Activity Rings</h2>
-                    <p>Mind Weekly transforms your health data into beautiful, motivating Activity Rings—just like you're familiar with on Apple Watch. Set your own daily targets for each mental wellness category and watch your progress come to life.</p>
-                    <ul class="benefits-list">
-                        <li>Personalized daily goals for each activity</li>
-                        <li>Visual progress tracking with Apple-style rings</li>
-                        <li>Weekly trends and detailed statistics</li>
-                        <li>Celebrate your progress every day</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <section class="section reflection">
+      <div class="shell reflection-grid">
+        <div class="reflection-copy reveal"><p class="eyebrow">A thoughtful end to the day</p><h2>Make space for what went well.</h2><p>Capture three positive moments, add your mood and look back on the week with a concise reflection. The goal is perspective—not another task to perfect.</p><ul class="check-list"><li>Three positive moments each day</li><li>Simple mood scores and influences</li><li>Weekly summaries and AI reflections</li><li>Home Screen widgets for a quick glance</li></ul></div>
+        <div class="screenshot-stack reveal"><figure class="shot shot-back"><img src="screenshots/statistics.png" alt="Full Circle statistics and mood trends" loading="lazy" width="1284" height="2778"></figure><figure class="shot shot-front"><img src="screenshots/journaling.png" alt="Full Circle evening journaling screen" loading="lazy" width="1284" height="2778"></figure></div>
+      </div>
     </section>
-
-    <!-- Journaling & Mood Tracking Section -->
-    <section class="journaling-section">
-        <div class="container">
-            <h2 class="section-title">Reflect on your day with evening journaling</h2>
-            <p class="section-subtitle">End each day with gratitude and self-reflection to build lasting mental wellness habits</p>
-            
-            <div class="journaling-content">
-                <div class="journaling-visual">
-                    <div class="journal-mockup">
-                        <div class="journal-entry">
-                            <div class="entry-header">
-                                <span class="entry-time">🌙 Evening Reflection</span>
-                                <span class="entry-date">Monday, Nov 11</span>
-                            </div>
-                            
-                            <div class="gratitude-section">
-                                <h4>What are you grateful for today?</h4>
-                                <div class="gratitude-item">1. Beautiful sunny weather</div>
-                                <div class="gratitude-item">2. Quality time with family</div>
-                                <div class="gratitude-item">3. Productive work session</div>
-                            </div>
-                            
-                            <div class="mood-section">
-                                <h4>How are you feeling?</h4>
-                                <div class="mood-selector">
-                                    <span class="mood-emoji active">😊</span>
-                                    <span class="mood-emoji">😌</span>
-                                    <span class="mood-emoji">😔</span>
-                                    <span class="mood-emoji">😴</span>
-                                </div>
-                            </div>
-                            
-                            <div class="influences-hint">
-                                <small>What influenced your mood most today?</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="journaling-text">
-                    <div class="journaling-feature">
-                        <div class="feature-icon-small">✨</div>
-                        <div>
-                            <h3>Three Daily Gratitudes</h3>
-                            <p>Each evening, reflect on three good things from your day. This simple practice helps shift your focus toward positivity and builds lasting happiness.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="journaling-feature">
-                        <div class="feature-icon-small">😊</div>
-                        <div>
-                            <h3>Evening Mood Check-In</h3>
-                            <p>Track how you're feeling at the end of each day and identify what influenced your mood. Discover patterns between your activities and emotional wellbeing.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="journaling-feature">
-                        <div class="feature-icon-small">🌙</div>
-                        <div>
-                            <h3>Perfect Bedtime Ritual</h3>
-                            <p>Journaling in the evening creates a calming routine before sleep. Reflect on your day, practice gratitude, and set a positive tone for tomorrow.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="section ecosystem">
+      <div class="shell">
+        <div class="section-heading reveal"><p class="eyebrow">Made for the Apple ecosystem</p><h2>Less logging. More living.</h2></div>
+        <div class="ecosystem-grid"><article class="eco-card reveal"><div class="eco-icon"></div><h3>Apple Health</h3><p>Bring supported wellbeing signals together with permissions you control.</p></article><article class="eco-card reveal"><div class="eco-icon">⌚</div><h3>Apple Watch</h3><p>Wear your watch to improve automatic tracking throughout the day and night.</p></article><article class="eco-card reveal"><div class="eco-icon">◉</div><h3>AirPods</h3><p>Use headphone activity to understand how much of your day is spent listening.</p></article><article class="eco-card reveal"><div class="eco-icon">▦</div><h3>Widgets</h3><p>Keep today’s rings and score visible without opening the app.</p></article></div>
+      </div>
     </section>
-
-    <!-- AI Weekly Summary Section -->
-    <section class="ai-summary-section">
-        <div class="container">
-            <div class="ai-summary-content">
-                <div class="ai-summary-text">
-                    <h2>Get AI-powered weekly insights</h2>
-                    <p>Every Sunday, Mind Weekly's AI analyzes your evening reflections, gratitude entries, mood patterns, and activity data from the past week to create a thoughtful, personalized summary.</p>
-                    
-                    <div class="ai-features">
-                        <div class="ai-feature">
-                            <span class="check-icon">✓</span>
-                            <span>Discover what you're most grateful for</span>
-                        </div>
-                        <div class="ai-feature">
-                            <span class="check-icon">✓</span>
-                            <span>Identify patterns in your mood and activities</span>
-                        </div>
-                        <div class="ai-feature">
-                            <span class="check-icon">✓</span>
-                            <span>Understand what influences your wellbeing</span>
-                        </div>
-                        <div class="ai-feature">
-                            <span class="check-icon">✓</span>
-                            <span>Celebrate your progress and wins</span>
-                        </div>
-                    </div>
-                    
-                    <div class="summary-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">7</span>
-                            <span class="stat-label">Days analyzed</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">∞</span>
-                            <span class="stat-label">Insights to discover</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="ai-summary-visual">
-                    <div class="summary-card">
-                        <div class="summary-card-header">
-                            <div class="summary-date">
-                                <span class="date-icon">📅</span>
-                                <span>Week of Nov 4-10</span>
-                            </div>
-                            <div class="ai-badge">
-                                <span class="ai-icon">✨</span>
-                                <span>AI Summary</span>
-                            </div>
-                        </div>
-                        <div class="summary-card-content">
-                            <h4>Your Week at a Glance</h4>
-                            <p>"This week, your gratitude entries beautifully captured moments of warmth and connection. You expressed appreciation for sunny weather, quality time with loved ones, and productive work—all contributing to your positive mood patterns.</p>
-                            <p>Your evening reflections show increased mindfulness and awareness. The combination of outdoor activities and meditation practice strongly correlates with your improved mood ratings...</p>
-                            <div class="summary-highlight">
-                                <strong>Key Insight:</strong> Days with gratitude entries mentioning social connections were 40% more likely to show positive mood ratings.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="section press" id="press">
+      <div class="shell press-grid">
+        <div class="press-copy reveal"><p class="eyebrow">For reviewers &amp; press</p><h2>A preventive wellbeing tracker with an instantly familiar idea.</h2><p>Full Circle applies the clarity of activity rings to five everyday signals that can support mental wellbeing. It is designed for reflection and healthy-habit awareness—not diagnosis, therapy or medical treatment.</p><div class="press-actions"><a class="button button-light" href="mailto:fabrizio.f.demaria@gmail.com?subject=Full%20Circle%20press%20enquiry">Request a review code</a><a class="text-link light-link" href="mailto:fabrizio.f.demaria@gmail.com?subject=Full%20Circle%20press%20enquiry">Media enquiries ↗</a></div></div>
+        <aside class="press-facts reveal" aria-label="Full Circle product facts"><p class="mini-label">QUICK FACTS</p><dl><div><dt>Category</dt><dd>Health &amp; Fitness</dd></div><div><dt>Platform</dt><dd>iPhone + Apple Watch</dd></div><div><dt>Core signals</dt><dd>Daylight, mindfulness, exercise, headphone use, sleep</dd></div><div><dt>Developer</dt><dd>Fabrizio Demaria</dd></div></dl></aside>
+      </div>
     </section>
-
-    <!-- Screenshots Gallery Section -->
-    <section class="screenshots-section">
-        <div class="container">
-            <h2 class="section-title">See Mind Weekly in action</h2>
-            <p class="section-subtitle">Explore the beautiful interface designed to help you focus on what matters</p>
-            
-            <div class="screenshots-gallery">
-                <div class="screenshot-card">
-                    <img src="screenshots/activity-tracker.png" alt="Activity tracker showing daily progress across all wellness categories" loading="lazy" onerror="this.src='screenshots/placeholder.svg'">
-                    <div class="screenshot-caption">
-                        <h3>Daily Activity Tracker</h3>
-                        <p>Monitor all your wellness activities in one place</p>
-                    </div>
-                </div>
-                
-                <div class="screenshot-card">
-                    <img src="screenshots/daily-rings.png" alt="Weekly progress view with activity rings for each day" loading="lazy" onerror="this.src='screenshots/placeholder.svg'">
-                    <div class="screenshot-caption">
-                        <h3>Weekly Progress</h3>
-                        <p>Track your rings and progress throughout the week</p>
-                    </div>
-                </div>
-                
-                <div class="screenshot-card">
-                    <img src="screenshots/goal-setting.png" alt="Personalized goal setting for each activity category" loading="lazy" onerror="this.src='screenshots/placeholder.svg'">
-                    <div class="screenshot-caption">
-                        <h3>Set Your Goals</h3>
-                        <p>Customize daily targets that work for your lifestyle</p>
-                    </div>
-                </div>
-                
-                <div class="screenshot-card">
-                    <img src="screenshots/journaling.png" alt="Daily journaling with gratitude prompts" loading="lazy" onerror="this.src='screenshots/placeholder.svg'">
-                    <div class="screenshot-caption">
-                        <h3>Daily Journaling</h3>
-                        <p>Reflect and express gratitude every day</p>
-                    </div>
-                </div>
-                
-                <div class="screenshot-card featured">
-                    <img src="screenshots/ai-reflection.png" alt="AI-powered weekly reflection and insights" loading="lazy" onerror="this.src='screenshots/placeholder.svg'">
-                    <div class="screenshot-caption">
-                        <h3>AI Weekly Reflection</h3>
-                        <p>Get personalized insights from your week <span class="pro-badge">Pro</span></p>
-                    </div>
-                </div>
-                
-                <div class="screenshot-card featured">
-                    <img src="screenshots/statistics.png" alt="Detailed statistics and trends over time" loading="lazy" onerror="this.src='screenshots/placeholder.svg'">
-                    <div class="screenshot-caption">
-                        <h3>Statistics & Trends</h3>
-                        <p>Analyze your progress with detailed charts <span class="pro-badge">Pro</span></p>
-                    </div>
-                </div>
-                
-                <div class="screenshot-card">
-                    <img src="screenshots/widgets.png" alt="iOS home screen widgets showing activity rings" loading="lazy" onerror="this.src='screenshots/placeholder.svg'">
-                    <div class="screenshot-caption">
-                        <h3>Home Screen Widgets</h3>
-                        <p>Stay motivated with beautiful widgets</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="section final-cta">
+      <div class="final-orbit" aria-hidden="true"></div><div class="shell reveal"><img src="screenshots/MWIcon.png" width="76" height="76" alt=""><p class="eyebrow">Start with today</p><h2>Five rings. One more mindful routine.</h2><p>See the habits behind how you feel—with less manual tracking.</p><a class="button button-primary" href="https://apps.apple.com/app/id6753870098">Download Full Circle</a><small>Full Circle is a wellbeing tool and is not a substitute for professional medical advice, diagnosis or treatment.</small></div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Start your mental wellness journey today</h2>
-                <p>Join others who are taking control of their mental health, one week at a time.</p>
-                <a href="https://apps.apple.com/se/app/mind-weekly/id6753870098" class="btn-primary btn-large">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-                    </svg>
-                    Download Mind Weekly
-                </a>
-                <p class="pricing-note">Free to download • Pro features available</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <img src="screenshots/MWIcon.png" alt="Mind Weekly Logo" class="logo-icon">
-                        <span class="logo-text">Mind Weekly</span>
-                    </div>
-                    <p>Mental health & wellness tracker</p>
-                </div>
-                <div class="footer-links">
-                    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
-                    <a href="https://fabriziodemaria.github.io/mind-weekly-privacy-policy/">Privacy Policy</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Fabrizio Demaria. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  </main>
+  <footer><div class="shell footer-inner"><a class="brand" href="#top"><img src="screenshots/MWIcon.png" width="36" height="36" alt=""><span>Full Circle</span></a><p>© <span data-year></span> Fabrizio Demaria. All rights reserved.</p><div><a href="mailto:fabrizio.f.demaria@gmail.com">Contact</a><a href="https://apps.apple.com/app/id6753870098">App Store</a></div></div></footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
-
