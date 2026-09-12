@@ -18,7 +18,7 @@ The site is plain HTML, CSS and JavaScript with no build step. Open `index.html`
 
 ## Deployment
 
-Deployment remains configured for GitHub Pages. The custom domain is stored in `CNAME` and must remain `www.mindweekly.app` unless the domain is intentionally changed.
+Deployment is configured for GitHub Pages from the root of `main`. The site is published at `https://fabriziodemaria.github.io/full-circle/`.
 
 ## Main files
 
@@ -27,7 +27,6 @@ index.html   Page structure, product copy and metadata
 styles.css  Visual system and responsive layouts
 script.js   Header and reveal behavior
 screenshots Product images and app icon
-CNAME       GitHub Pages custom domain
 ```
 
 ## Product link
