@@ -35,6 +35,6 @@ App Store buttons use the stable application ID URL (`https://apps.apple.com/app
 
 ## Contact
 
-Press and support: fabrizio.f.demaria@gmail.com
+Press and support: fullcircleapp@icloud.com
 
 © 2026 Fabrizio Demaria. All rights reserved.
